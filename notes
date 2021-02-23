@@ -1,0 +1,13 @@
+1.   build cli
+2.   welcome user, prompt to select a base spirit or exit
+3.     if they selct spirit, print cocktail list
+4.    select cocktail and print details
+4.   if exit, gppdbye and exit
+
+3 classes
+CLI class- controller- what communicates with my user
+Cocktail class- where objects are created to display
+API class- bring in external data, consume api here, instatiate object
+
+"https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=#{ingredient}"  #cocktails by ingredient name
+"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=#{idnumber}"     #cocktail by idnumber
