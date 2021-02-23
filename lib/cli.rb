@@ -25,23 +25,28 @@ end
         # Cocktail.all.each_with_index do |cocktail, index|
         #     puts "#{index + 1}. #{cocktail.spirit}
         # end
-
-        puts "1. Vodka"
-        puts "2. Gin"
-        puts "3. Tequila"
-        puts "4. Bourbon"
-        puts "5. Rum"
-        puts "Which spirit would you like to imbibe?"
+        puts "Suggested Spirits:"
+        puts "Vodka"
+        puts "Gin"
+        puts "Tequila"
+        puts "Bourbon"
+        puts "Rum"
+        puts "What spirit would you like to imbibe?"
         spirit = gets.strip.downcase
-        
-        spirit_selection(spirit)
+        selected_spirit(spirit)
+
     end
     def goodbye
         puts "Thank you for stopping by, have a nice day!"
     end
-    def spirit_selection(spirit)
-        #go through spirit array, find method to find selected spirit or index number
-        puts "#{spirit}"
+    def selected_spirit(spirit)
+        API.new.get_data(spirit)
+        Cocktail.all.each do |cocktail|
+           puts "#{cocktail.strDrink}"
+           binding.pry
+           puts "select you drink"
+           drink = gets.strip.capitalize
+        end
 
     end
 

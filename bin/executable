@@ -2,14 +2,15 @@
 require 'net/http'
 require 'pry'
 require 'json'
-require 'dotenv/load'
-require_relative '../cocktaildb'
+require 'httparty'
+#require 'dotenv/load'
+#require_relative '../cocktaildb'
 require_relative '../lib/CbiCliApi'
 require_relative '../lib/api' 
 require_relative '../lib/cli'
 require_relative '../lib/cocktail'
 require_relative '../lib/cocktail_list'
-gem 'dotenv'
+#gem 'dotenv'
 
 #puts "environment"
 
