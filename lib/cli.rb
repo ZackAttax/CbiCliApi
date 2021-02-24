@@ -48,7 +48,6 @@ end
            puts "loading drink............"
            puts " "
            Cocktail.find_by_name(new_drink)
-           binding.pry
            another_round
     end
 
