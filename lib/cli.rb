@@ -22,9 +22,6 @@ end
     end
 
     def spirit_list
-        # Cocktail.all.each_with_index do |cocktail, index|
-        #     puts "#{index + 1}. #{cocktail.spirit}
-        # end
         puts "Suggested Spirits:"
         puts "Vodka"
         puts "Gin"
@@ -41,14 +38,44 @@ end
     end
     def selected_spirit(spirit)
         API.new.get_data(spirit)
-        Cocktail.all.each do |cocktail|
-           puts "#{cocktail.strDrink}"
-           binding.pry
-           puts "select you drink"
-           drink = gets.strip.capitalize
+        Cocktail.cocktail_list
+           select_drink
         end
-
+    def select_drink
+           puts "select your drink"
+           drink = gets 
+            new_drink = drink.split.map {|x| x.capitalize}.join(" ")
+           puts "loading drink............"
+           puts " "
+           Cocktail.find_by_name(new_drink)
+           another_round
     end
 
-
+    def another_round
+        puts "Another Round? Y or N"
+       input = gets.strip.capitalize
+        if input == "N"   
+             goodbye
+        else input =="Y"
+         puts "Same spirit? Y or N"
+         next_round
+            
+        end
+    end
+    def next_round
+        input = gets.strip.capitalize
+        if input == "N"
+        
+        another_round_new_spirit
+        elsif input == "Y"
+            Cocktail.cocktail_list
+            select_drink
+        else
+            next_round
+        end
+    end
+    def another_round_new_spirit
+        Cocktail.clear_all
+        spirit_list
+    end
 end
