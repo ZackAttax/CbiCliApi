@@ -24,36 +24,21 @@ attr_accessor :strDrink, :strGlass, :strInstructions, :strIngredient1, :strIngre
         puts self.strDrink
         puts self.strGlass
         puts self.strInstructions
-        puts self.strIngredient1  
-        puts self.strMeasure1
-        puts self.strIngredient2
-        puts self.strMeasure2
-        puts self.strIngredient3
-        puts self.strMeasure3
-        puts self.strIngredient4
-        puts self.strMeasure4
-        puts self.strIngredient5 
-        puts self.strMeasure5
-        puts self.strIngredient6
-        puts self.strMeasure6
-        puts self.strIngredient7 
-        puts self.strMeasure7
-        puts self.strIngredient8 
-        puts self.strMeasure8
-        puts self.strIngredient9
-        puts self.strMeasure9
-        puts self.strIngredient10
-        puts self.strMeasure10
-        puts self.strIngredient11
-        puts self.strMeasure11
-        puts self.strIngredient12
-        puts self.strMeasure12
-        puts self.strIngredient13
-        puts self.strMeasure13
-        puts self.strIngredient14
-        puts self.strMeasure14
-        puts self.strIngredient15
-        puts self.strMeasure15
+        puts "#{self.strIngredient1} - #{self.strMeasure1}"
+        puts "#{self.strIngredient2} - #{self.strMeasure2}"
+        puts "#{self.strIngredient3} - #{self.strMeasure3}"
+        puts "#{self.strIngredient4} - #{self.strMeasure4}"
+        puts "#{self.strIngredient5} - #{self.strMeasure5}"
+        puts "#{self.strIngredient6} - #{self.strMeasure6}"
+        puts "#{self.strIngredient7} - #{self.strMeasure7}"
+        # puts "#{self.strIngredient8} - #{self.strMeasure8}"
+        # puts "#{self.strIngredient9} - #{self.strMeasure9}"
+        # puts "#{self.strIngredient10} - #{self.strMeasure10}"
+        # puts "#{self.strIngredient11} - #{self.strMeasure11}"
+        # puts "#{self.strIngredient12} - #{self.strMeasure12}"
+        # puts "#{self.strIngredient13} - #{self.strMeasure13}"
+        # puts "#{self.strIngredient14} - #{self.strMeasure14}"
+        # puts "#{self.strIngredient15} - #{self.strMeasure15}"
     end
     def self.cocktail_list
     Cocktail.all.each do |cocktail|

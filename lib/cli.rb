@@ -38,16 +38,17 @@ end
     end
     def selected_spirit(spirit)
         API.new.get_data(spirit)
-        Cocktail.cocktail_list
            select_drink
         end
     def select_drink
+        Cocktail.cocktail_list
            puts "select your drink"
            drink = gets 
             new_drink = drink.split.map {|x| x.capitalize}.join(" ")
            puts "loading drink............"
            puts " "
            Cocktail.find_by_name(new_drink)
+           binding.pry
            another_round
     end
 
@@ -65,10 +66,8 @@ end
     def next_round
         input = gets.strip.capitalize
         if input == "N"
-        
         another_round_new_spirit
         elsif input == "Y"
-            Cocktail.cocktail_list
             select_drink
         else
             next_round
