@@ -1,8 +1,9 @@
 class Cocktail
-attr_accessor :strDrink, :strGlass, :strInstructions, :strIngredient1, :strIngredient2, :strIngredient3, :strIngredient4, :strIngredient5, :strIngredient6, :strIngredient7, :strIngredient8, :strIngredient9, :strIngredient10, :strIngredient11, :strIngredient12, :strIngredient13, :strIngredient14, :strIngredient15,  :strMeasure1, :strMeasure2, :strMeasure3, :strMeasure4, :strMeasure5, :strMeasure6, :strMeasure7, :strMeasure8, :strMeasure9, :strMeasure10, :strMeasure11, :strMeasure12, :strMeasure13, :strMeasure14, :strMeasure15
+attr_accessor :strDrink, :strGlass, :strInstructions, :strIngredient1, :strIngredient2, :strIngredient3, :strIngredient4, :strIngredient5, :strIngredient6, :strIngredient7, :strIngredient8, :strIngredient9, :strIngredient10, :strIngredient11, :strIngredient12, :strIngredient13, :strIngredient14, :strIngredient15,  :strMeasure1, :strMeasure2, :strMeasure3, :strMeasure4, :strMeasure5, :strMeasure6, :strMeasure7, :strMeasure8, :strMeasure9, :strMeasure10, :strMeasure11, :strMeasure12, :strMeasure13, :strMeasure14, :strMeasure15, :drink_number
 @@all = []
-    def initialize(drink_hash)
+    def initialize(drink_hash, drink_number)
         #binding.pry
+        @drink_number = drink_number
         drink_hash["drinks"][0].each do |k, v|
             self.send("#{k}=",v) if self.respond_to?("#{k}=")
         end
@@ -14,10 +15,10 @@ attr_accessor :strDrink, :strGlass, :strInstructions, :strIngredient1, :strIngre
     def self.clear_all
         @@all = []
     end
-    def self.find_by_name(name)
-    drink = self.all.find {|cocktail| cocktail.strDrink == name}
-    #binding.pry
-    drink.drink_specs
+    def self.find_by_number(number)
+     if drink = self.all.find {|cocktail| cocktail.drink_number == number}
+        drink.drink_specs
+    end
     end
 
     def drink_specs
@@ -40,9 +41,9 @@ attr_accessor :strDrink, :strGlass, :strInstructions, :strIngredient1, :strIngre
         # puts "#{self.strIngredient14} - #{self.strMeasure14}"
         # puts "#{self.strIngredient15} - #{self.strMeasure15}"
     end
-    def self.cocktail_list
+    def self.cocktail_list_with_number
     Cocktail.all.each do |cocktail|
-        puts "#{cocktail.strDrink}"
+        puts "#{cocktail.drink_number}. #{cocktail.strDrink}"
     end
     end
         

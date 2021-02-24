@@ -13,11 +13,9 @@ class API
     drink_array = drink_hash["drinks"]
     drink_array.each do |drink_hash|
         new_hash = HTTParty.get(LOOKUPURL+drink_hash["idDrink"])
-        Cocktail.new(new_hash)
+        Cocktail.new(new_hash, n)
         puts "#{n} new drink(s) loaded!"
         n += 1
         end
-    #drink_hash.each_with_index do |drink, index|
-     #   puts "#{index+1}. #{drink"
  end
 end

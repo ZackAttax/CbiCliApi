@@ -41,14 +41,17 @@ end
            select_drink
         end
     def select_drink
-        Cocktail.cocktail_list
-           puts "select your drink"
-           drink = gets 
-            new_drink = drink.split.map {|x| x.capitalize}.join(" ")
+        Cocktail.cocktail_list_with_number
+           puts "select your drink number"
+           drink_number = gets.to_i 
+            #new_drink = drink.split.map {|x| x.capitalize}.join(" ")
            puts "loading drink............"
            puts " "
-           Cocktail.find_by_name(new_drink)
-           another_round
+           if Cocktail.find_by_number(drink_number)
+                another_round
+           else #puts "Input not understood."
+            another_round
+           end
     end
 
     def another_round
