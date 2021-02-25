@@ -32,8 +32,8 @@ attr_accessor :strDrink, :strGlass, :strInstructions, :strIngredient1, :strIngre
         puts "#{self.strIngredient5} - #{self.strMeasure5}"
         puts "#{self.strIngredient6} - #{self.strMeasure6}"
         puts "#{self.strIngredient7} - #{self.strMeasure7}"
-        # puts "#{self.strIngredient8} - #{self.strMeasure8}"
-        # puts "#{self.strIngredient9} - #{self.strMeasure9}"
+        puts "#{self.strIngredient8} - #{self.strMeasure8}"
+        puts "#{self.strIngredient9} - #{self.strMeasure9}"
         # puts "#{self.strIngredient10} - #{self.strMeasure10}"
         # puts "#{self.strIngredient11} - #{self.strMeasure11}"
         # puts "#{self.strIngredient12} - #{self.strMeasure12}"
@@ -42,9 +42,10 @@ attr_accessor :strDrink, :strGlass, :strInstructions, :strIngredient1, :strIngre
         # puts "#{self.strIngredient15} - #{self.strMeasure15}"
     end
     def self.cocktail_list_with_number
-    Cocktail.all.each do |cocktail|
-        puts "#{cocktail.drink_number}. #{cocktail.strDrink}"
+    Cocktail.all.each  {|cocktail| puts "#{cocktail.drink_number}. #{cocktail.strDrink}"}
     end
+    def self.find_by_ingredient(ingredient)
+        self.all.select{|cocktail| cocktail.include?(ingredient)}
     end
         
 end

@@ -27,10 +27,16 @@ end
         puts "Gin"
         puts "Tequila"
         puts "Bourbon"
+        puts "Whiskey"
+        puts "Scotch"
         puts "Rum"
         puts "What spirit would you like to imbibe?"
         spirit = gets.strip.downcase
+            if spirit == "exit"
+                goodbye
+            else
         selected_spirit(spirit)
+            end
 
     end
     def goodbye
@@ -48,8 +54,10 @@ end
            puts "loading drink............"
            puts " "
            if Cocktail.find_by_number(drink_number)
+            #binding.pry
                 another_round
            else #puts "Input not understood."
+            #binding.pry
             another_round
            end
     end
