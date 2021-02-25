@@ -2,7 +2,7 @@
 2.   welcome user, prompt to select a base spirit or exit
 3.     if they selct spirit, print cocktail list
 4.    select cocktail and print details
-4.   if exit, gppdbye and exit
+4.   if exit, goodbye and exit
 
 3 classes
 CLI class- controller- what communicates with my user

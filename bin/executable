@@ -1,17 +1,11 @@
-#!/usr/bin/env ruby
 require 'net/http'
 require 'pry'
 require 'json'
 require 'httparty'
-#require 'dotenv/load'
-#require_relative '../cocktaildb'
 require_relative '../lib/CbiCliApi'
 require_relative '../lib/api' 
 require_relative '../lib/cli'
 require_relative '../lib/cocktail'
 require_relative '../lib/cocktail_list'
-#gem 'dotenv'
-
-#puts "environment"
-
+ 
 CbiCliApi::CLI.new.call
