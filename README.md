@@ -18,6 +18,8 @@ Or install it yourself as:
 
     $ gem install CbiCliApi
 
+run the app using bin/executable
+
 ## Usage
 
 CbiCliApi
